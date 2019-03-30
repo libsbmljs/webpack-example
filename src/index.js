@@ -77,11 +77,12 @@ const sbmlstr = " \
 
 let libsbml = null // a reference to the module to use later
 libsbml_module().then((module) => {
-  // console.log('loaded')
   libsbml = module
   const reader = new libsbml.SBMLReader()
   const doc = reader.readSBMLFromString(sbmlstr)
   const model = doc.getModel()
-  document.write(`Reactions: ${model.getNumReactions()}`)
-  // alert('loaded')
+  const rxids = model.reactions.map(r => r.getId())
+  const paramids = model.parameters.map(p => p.getId())
+  const specids = model.species.map(s => s.getId())
+  document.getElementById("results").innerHTML = `Reactions: ${rxids}, parameters: ${paramids}, species: ${specids}`
 })
