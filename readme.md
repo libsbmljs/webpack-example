@@ -20,7 +20,7 @@ This will install all of the `npm` dependencies for this example, including libs
 
 When creating a Webpack project, you need to create a file called webpack.config.js to tell Webpack what options to use. In this repository, one is already created for you. Refer to the official [Webpack tutorial](https://webpack.js.org/guides/getting-started/) for an explanation of the fields in this file. We will cover only the parts that are required for using libsbmljs.
 
-### Ignore Plugin
+### 1. Ignore Plugin
 
 By default, Emscripten will try to to use the Node.js `fs` module (which doesn't exist in the browser). Tell Webpack to disable this by using the Webpack Ignore Plugin in your `webpack.config.js` file.
 
@@ -30,7 +30,7 @@ plugins: [
 ]
 ```
 
-### Public Path
+### 2.Public Path
 
 Webpack needs to know where you want to host your *.wasm files. In this example, we will host them at the root of the site by setting Webpack's public path to '`/`' in your `webpack.config.js` file.
 
@@ -41,7 +41,7 @@ output: {
 },
 ```
 
-### Webpack Dev Server
+### 3. Webpack Dev Server
 
 Webpack contains a development server that allows you to test your code before deploying it. The dev server will host the *.wasm file so it needs to know where it is. We need to point Webpack to the `node_modules/libsbmljs_stable` directory where the *.wasm file resides.
 
@@ -52,6 +52,18 @@ devServer: {
     path.join(__dirname,'node_modules','libsbmljs_stable')
   ]
 },
+```
+
+### 4. Copying *.wasm Files with the Copy Plugin
+
+When you are ready to deploy your site, you will need Webpack to copy your *.wasm files to the output directory for you. You can do this with the Webpack [Copy Plugin](https://github.com/webpack-contrib/copy-webpack-plugin).
+
+```javascript
+const CopyPlugin = require('copy-webpack-plugin');
+...
+new CopyPlugin([
+  {from: '**/*.wasm', to: './', flatten: true}
+]),
 ```
 
 ## Using Webpack
