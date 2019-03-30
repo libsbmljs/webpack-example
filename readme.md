@@ -30,6 +30,8 @@ This will install all of the `npm` dependencies for this example, including libs
 
 When creating a Webpack project, you need to create a file called webpack.config.js to tell Webpack what options to use. In this repository, one is already created for you. Refer to the official [Webpack tutorial](https://webpack.js.org/guides/getting-started/) for an explanation of the fields in this file. We will cover only the parts that are required for using libsbmljs.
 
+There are four requirements to using Emscripten-generated modules in Webpack, and they are listed below.
+
 ### 1. Ignore Plugin
 
 By default, Emscripten will try to to use the Node.js `fs` module (which doesn't exist in the browser). Tell Webpack to disable this by using the Webpack Ignore Plugin in your `webpack.config.js` file.
