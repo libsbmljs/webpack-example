@@ -23,5 +23,12 @@
   "homepage": "https://github.com/libsbmljs/webpack-example#readme",
   "dependencies": {
     "libsbmljs_stable": "^5.17.0-beta3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
