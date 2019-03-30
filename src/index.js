@@ -1,11 +1,5 @@
 import libsbml_module from 'libsbmljs_stable'
 
-let libsbml = null // a reference to the module to use later
-libsbml_module().then((self,module) => {
-  libsbml = module
-  alert('libsbmljs loaded')
-})
-
 const sbmlstr = " \
 <!-- Created by libAntimony version v2.5 on 2014-10-09 21:22 with libSBML version 5.10.0. --> \
 <sbml xmlns=\"http://www.sbml.org/sbml/level3/version1/core\" level=\"3\" version=\"1\"> \
@@ -80,3 +74,14 @@ const sbmlstr = " \
 </listOfReactions> \
 </model> \
 </sbml>"
+
+let libsbml = null // a reference to the module to use later
+libsbml_module().then((module) => {
+  // console.log('loaded')
+  libsbml = module
+  const reader = new libsbml.SBMLReader()
+  const doc = reader.readSBMLFromString(sbmlstr)
+  const model = doc.getModel()
+  document.write(`Reactions: ${model.getNumReactions()}`)
+  // alert('loaded')
+})
