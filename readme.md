@@ -6,6 +6,16 @@ Emscripten-compiled modules like [libsbmljs](https://libsbmljs.github.io/) are a
 Webpack handles the *.js file just fine, but it needs some special instructions for handling the *.wasm file.
 In addition, Emscripten is not designed to work with systems like Webpack. It assumes the *.js file and *.wasm file will always be in the same directory - which they generally won't because Webpack combines **all** JavaScript files into a single bundle.
 
+## Using this repository
+
+This repository is a working Webpack example. You can generate the output site in the `dist` directory by running:
+
+```
+npx webpack --mode production
+```
+
+See the "Using Webpack" section below for more usage information.
+
 ## Walkthrough
 
 To follow this example, begin by cloning the repository and running
