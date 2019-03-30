@@ -108,6 +108,6 @@ You can try hosting this page with Python. Navigate to the `dist` directory and 
 python3 -m http.server 8090
 ```
 
-Then go to `http://0.0.0.0:8090/` in your browser. You should see the following
+Then go to `http://0.0.0.0:8090/` in your browser. You should see the following output in your browser:
 
 ![Screenshot](/img/screenshot.png?raw=true "Screenshot")
