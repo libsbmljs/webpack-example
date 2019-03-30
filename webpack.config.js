@@ -5,7 +5,16 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: [
+      path.join(__dirname,'src'),
+      path.join(__dirname,'node_modules','libsbmljs_stable')
+    ],
+    hot: false
   },
   module: {
     rules: [

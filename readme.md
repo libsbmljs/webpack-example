@@ -19,3 +19,19 @@ npm install
 This will install all of the `npm` dependencies for this example, including libsbmljs, Babel, and Webpack.
 
 When creating a Webpack project, you need to create a file called webpack.config.js to tell Webpack what options to use. In this repository, one is already created for you. Refer to the official [Webpack tutorial](https://webpack.js.org/guides/getting-started/) for an explanation of the fields in this file. We will cover only the parts that are required for using libsbmljs.
+
+### Ignore Plugin
+
+By default, Emscripten will try to to use the Node.js `fs` module (which doesn't exist in the browser). Tell Webpack to disable this by using the Webpack Ignore Plugin:
+
+```javascript
+plugins: [
+  new webpack.IgnorePlugin(/^fs$/),
+]
+```
+
+### Public Path
+
+## Using Webpack
+
+Webpack can be used as either a development serer (which allows you to make incremental changes and test the result), or for deployment, which writes out JavaScript bundles for you site that can then be uploaded to a hosting service.
