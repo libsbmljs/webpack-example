@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/libsbmljs/webpack-example/issues"
   },
-  "homepage": "https://github.com/libsbmljs/webpack-example#readme"
+  "homepage": "https://github.com/libsbmljs/webpack-example#readme",
+  "dependencies": {
+    "libsbmljs_stable": "^5.17.0-beta3"
+  }
 }
