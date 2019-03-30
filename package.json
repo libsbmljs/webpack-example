@@ -1,0 +1,24 @@
+{
+  "name": "libsbmljs-webpack-example",
+  "version": "1.0.0",
+  "description": "A Webpack example for libsbmljs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libsbmljs/webpack-example.git"
+  },
+  "keywords": [
+    "sbml",
+    "systems",
+    "biology"
+  ],
+  "author": "Kyle Medley",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/libsbmljs/webpack-example/issues"
+  },
+  "homepage": "https://github.com/libsbmljs/webpack-example#readme"
+}
