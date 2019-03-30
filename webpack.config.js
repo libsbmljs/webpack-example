@@ -13,8 +13,7 @@ module.exports = {
     contentBase: [
       path.join(__dirname,'src'),
       path.join(__dirname,'node_modules','libsbmljs_stable')
-    ],
-    hot: false
+    ]
   },
   module: {
     rules: [

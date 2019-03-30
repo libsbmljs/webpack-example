@@ -22,7 +22,7 @@ When creating a Webpack project, you need to create a file called webpack.config
 
 ### Ignore Plugin
 
-By default, Emscripten will try to to use the Node.js `fs` module (which doesn't exist in the browser). Tell Webpack to disable this by using the Webpack Ignore Plugin:
+By default, Emscripten will try to to use the Node.js `fs` module (which doesn't exist in the browser). Tell Webpack to disable this by using the Webpack Ignore Plugin in your `webpack.config.js` file.
 
 ```javascript
 plugins: [
@@ -31,6 +31,28 @@ plugins: [
 ```
 
 ### Public Path
+
+Webpack needs to know where you want to host your *.wasm files. In this example, we will host them at the root of the site by setting Webpack's public path to '`/`' in your `webpack.config.js` file.
+
+```javascript
+output: {
+  ...
+  publicPath: '/'
+},
+```
+
+### Webpack Dev Server
+
+Webpack contains a development server that allows you to test your code before deploying it. The dev server will host the *.wasm file so it needs to know where it is. We need to point Webpack to the `node_modules/libsbmljs_stable` directory where the *.wasm file resides.
+
+```javascript
+devServer: {
+  contentBase: [
+    path.join(__dirname,'src'),
+    path.join(__dirname,'node_modules','libsbmljs_stable')
+  ]
+},
+```
 
 ## Using Webpack
 
