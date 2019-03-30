@@ -73,3 +73,19 @@ Then connect to `http://localhost:8080/` in your browser.
 ```
 npx webpack --mode production
 ```
+
+In the `dist` directory, you should see three files:
+
+```
+index.html  libsbml.wasm  main.js
+```
+
+You can try hosting this page with Python. Navigate to the `dist` directory and run:
+
+```
+python3 -m http.server 8090
+```
+
+Then go to `http://0.0.0.0:8090/` in your browser. You should see the following
+
+![Screenshot](/img/screenshot.png?raw=true "Screenshot")
