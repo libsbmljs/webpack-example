@@ -57,3 +57,19 @@ devServer: {
 ## Using Webpack
 
 Webpack can be used as either a development serer (which allows you to make incremental changes and test the result), or for deployment, which writes out JavaScript bundles for you site that can then be uploaded to a hosting service.
+
+* To run the Webpack dev server:
+
+```
+npx webpack-dev-server --mode development
+```
+
+Then connect to `http://localhost:8080/` in your browser.
+
+![Screenshot](/img/screenshot.png?raw=true "Screenshot")
+
+* To run Webpack in production mode to produce *.js bundles for your site:
+
+```
+npx webpack --mode production
+```
