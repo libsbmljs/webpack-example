@@ -1,4 +1,5 @@
 import libsbml_module from 'libsbmljs_stable'
+import { escape } from 'underscore'
 
 const sbmlstr = " \
 <!-- Created by libAntimony version v2.5 on 2014-10-09 21:22 with libSBML version 5.10.0. --> \
@@ -84,5 +85,10 @@ libsbml_module().then((module) => {
   const rxids = model.reactions.map(r => r.getId())
   const paramids = model.parameters.map(p => p.getId())
   const specids = model.species.map(s => s.getId())
-  document.getElementById("results").innerHTML = `Reactions: ${rxids}, parameters: ${paramids}, species: ${specids}`
+  // change param value
+  model.parameters[0].setValue(100);
+  // write out
+  const writer = new libsbml.SBMLWriter()
+  const sbml = writer.writeSBMLToString(doc)
+  document.getElementById("results").innerHTML = escape(sbml)
 })
