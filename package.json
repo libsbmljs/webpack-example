@@ -26,7 +26,7 @@
   "dependencies": {
     "install": "^0.13.0",
     "libsbmljs_stable": "^5.17.0-beta3",
-    "npm": "^6.11.3",
+    "npm": "^6.13.4",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
